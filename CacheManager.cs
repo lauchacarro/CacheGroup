@@ -44,9 +44,9 @@ namespace CacheGroup
             {
                 if (key is CacheKey cacheKey)
                 {
-                    for (int i = 0; i < cacheKey.Entities.Length; i++)
+                    for (int i = 0; i < cacheKey.Entities.Value.Length; i++)
                     {
-                        if (cacheKey.Entities[i] == entity)
+                        if (cacheKey.Entities.Value[i] == entity)
                         {
                             _memoryCache.Remove(key);
                             break;
@@ -62,7 +62,7 @@ namespace CacheGroup
             {
                 if (key is CacheKey cacheKey)
                 {
-                    foreach (var entity in cacheKey.Entities)
+                    foreach (var entity in cacheKey.Entities.Value)
                     {
                         for (int entityIndex = 0; entityIndex < entities.Length; entityIndex++)
                         {

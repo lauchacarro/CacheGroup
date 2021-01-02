@@ -13,11 +13,30 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
+
+  verifychanges:
+    runs-on: ubuntu-latest
+    outputs:
+      result: ${{ steps.changed-domain-shared.outputs.changed }}
+    
+    steps:
+    
+    - name: Checkout 
+      uses: actions/checkout@v2
+      with:
+        fetch-depth: 100 # avoid shallow clone so nbgv can do its work.
+
+    - uses: marceloprado/has-changed-path@v1
+      id: changed-domain-shared
+      with:
+        paths: src/CacheGroup
+        
   # This workflow contains a single job called "build"
-  build:
+  uploadnuget:
+    needs: verifychanges
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
-
+    if: needs.verifychanges.outputs.result == 'true'
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
@@ -38,16 +57,17 @@ jobs:
         run: dotnet tool install -g Monbsoft.UpdateVersion
  
       - name: Increment Patch Version
+        working-directory: src/CacheGroup
         run: update-version set  1.0.0-alpha.${{ github.run_number }}
     
       - name: Generate Package
-        run: dotnet build CacheGroup.csproj --configuration Release
+        run: dotnet build "src/CacheGroup/CacheGroup.csproj" --configuration Release
       
       
       - name: Publish to NuGet
         uses: brandedoutcast/publish-nuget@v2
         with:
-          PROJECT_FILE_PATH: CacheGroup.csproj
+          PROJECT_FILE_PATH: src/CacheGroup/CacheGroup.csproj
           VERSION_REGEX: '^\s*<Version>(.*)<\/Version>\s*$'
           TAG_FORMAT: '*'
           NUGET_KEY: ${{secrets.NUGET_KEY}}

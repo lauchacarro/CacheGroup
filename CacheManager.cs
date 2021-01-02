@@ -14,7 +14,7 @@ namespace CacheGroup
             _memoryCache = memoryCache ?? throw new ArgumentNullException(nameof(memoryCache));
         }
 
-        public T GetOrSet<T>(CacheKey cacheKey, Func<T> getItemCallback) where T : class
+        public T GetOrSet<T>(CacheKey cacheKey, Func<T> getItemCallback)
         {
             if (_memoryCache.Get(cacheKey) is not T item)
             {
@@ -26,7 +26,7 @@ namespace CacheGroup
             return item;
         }
 
-        public async Task<T> GetOrSetAsync<T>(CacheKey cacheKey, Func<Task<T>> getItemCallback) where T : class
+        public async Task<T> GetOrSetAsync<T>(CacheKey cacheKey, Func<Task<T>> getItemCallback)
         {
             if (_memoryCache.Get(cacheKey) is not T item)
             {

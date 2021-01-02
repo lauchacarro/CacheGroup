@@ -6,8 +6,8 @@ namespace CacheGroup
 {
     public interface ICacheManager
     {
-        T GetOrSet<T>(CacheKey cacheKey, Func<T> getItemCallback) where T : class;
-        Task<T> GetOrSetAsync<T>(CacheKey cacheKey, Func<Task<T>> getItemCallback) where T : class;
+        T GetOrSet<T>(CacheKey cacheKey, Func<T> getItemCallback);
+        Task<T> GetOrSetAsync<T>(CacheKey cacheKey, Func<Task<T>> getItemCallback);
 
         void RemoveByEntity(string entity);
         void RemoveByEntity(params string[] entities);

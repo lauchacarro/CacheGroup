@@ -11,7 +11,7 @@ using System.Runtime.CompilerServices;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace WebApi.CachePerEntity.Caching
+namespace CacheGroup
 {
     internal class CacheEntry : ICacheEntry
     {

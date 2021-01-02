@@ -14,7 +14,7 @@ using System.Runtime.CompilerServices;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace WebApi.CachePerEntity.Caching
+namespace CacheGroup
 {
     /// <summary>
     /// An implementation of <see cref="IMemoryCache"/> using a dictionary to

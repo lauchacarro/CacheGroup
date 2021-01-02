@@ -4,7 +4,7 @@
 using System.Diagnostics;
 using System.Threading;
 
-namespace WebApi.CachePerEntity.Caching
+namespace CacheGroup
 {
     internal static class CacheEntryHelper
     {

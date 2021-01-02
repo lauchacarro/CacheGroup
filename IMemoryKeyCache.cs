@@ -3,7 +3,7 @@ using Microsoft.Extensions.Caching.Memory;
 
 using System.Collections.Generic;
 
-namespace WebApi.CachePerEntity.Caching
+namespace CacheGroup
 {
     public interface IMemoryKeyCache : IMemoryCache
     {

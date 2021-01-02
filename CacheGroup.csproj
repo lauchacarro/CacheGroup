@@ -6,6 +6,8 @@
     <Authors>Lautaro Carro</Authors>
     <Product />
     <Version>1.0.0-alpha.1</Version>
+    <RepositoryUrl>https://github.com/lauchacarro/CacheGroup</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/lauchacarro/CacheGroup</PackageProjectUrl>
   </PropertyGroup>
 
   <ItemGroup>

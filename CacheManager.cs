@@ -3,7 +3,7 @@
 using System;
 using System.Threading.Tasks;
 
-namespace WebApi.CachePerEntity.Caching
+namespace CacheGroup
 {
     public class CacheManager : ICacheManager
     {

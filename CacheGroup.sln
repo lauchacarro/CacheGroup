@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30803.129
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CacheGroup", "CacheGroup.csproj", "{22FFA3CC-B1DC-4615-8942-F30F0A18F33F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CacheGroup", "src\CacheGroup\CacheGroup.csproj", "{22FFA3CC-B1DC-4615-8942-F30F0A18F33F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CacheGroup.Samples", "src\CacheGroup.Samples\CacheGroup.Samples.csproj", "{E65EDDFA-7B5F-4EC0-BDB9-55BB330173A4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{22FFA3CC-B1DC-4615-8942-F30F0A18F33F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{22FFA3CC-B1DC-4615-8942-F30F0A18F33F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{22FFA3CC-B1DC-4615-8942-F30F0A18F33F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E65EDDFA-7B5F-4EC0-BDB9-55BB330173A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E65EDDFA-7B5F-4EC0-BDB9-55BB330173A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E65EDDFA-7B5F-4EC0-BDB9-55BB330173A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E65EDDFA-7B5F-4EC0-BDB9-55BB330173A4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

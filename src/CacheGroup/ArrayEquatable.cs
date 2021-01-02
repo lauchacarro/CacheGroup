@@ -21,7 +21,14 @@ namespace CacheGroup
 
         public override int GetHashCode()
         {
-            return this.Value.GetHashCode();
+            HashCode hashCode = new();
+
+            for (int i = 0; i < Value.Length; i++)
+            {
+                hashCode.Add(Value[i]);
+            }
+
+            return hashCode.ToHashCode();
         }
 
         public override bool Equals(object obj) => obj is ArrayEquatable<T> array && Equals(array);

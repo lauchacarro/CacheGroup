@@ -1,4 +1,16 @@
 ﻿namespace CacheGroup
 {
-    public record CacheKey(string Method, string Parameter = "", params string[] Entities);
+    public record CacheKey
+    {
+        public CacheKey(string method, string parameter, string[] entities)
+        {
+            Method = method;
+            Parameter = parameter;
+            Entities = entities;
+        }
+
+        public string Method { get; init; }
+        public string Parameter { get; init; }
+        public ArrayEquatable<string> Entities { get; init; }
+    }
 }

@@ -2,7 +2,7 @@
 {
     public record CacheKey
     {
-        public CacheKey(string method, string parameter, string[] entities)
+        public CacheKey(string method, string parameter, params string[] entities)
         {
             Method = method;
             Parameter = parameter;

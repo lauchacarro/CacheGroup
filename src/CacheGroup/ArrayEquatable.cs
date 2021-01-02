@@ -24,9 +24,8 @@ namespace CacheGroup
             HashCode hashCode = new();
 
             for (int i = 0; i < Value.Length; i++)
-            {
                 hashCode.Add(Value[i]);
-            }
+            
 
             return hashCode.ToHashCode();
         }
